@@ -1,5 +1,5 @@
 
-Ruby Programmer - Excercise 1
+Javascript/Frontend Programmer - Excercise 1
 =============================
 
 Fork this project with the original description and write your own code.
@@ -10,7 +10,7 @@ Commit the important milestones and not just the final result!
 Excercise description
 --------------------
 
-Create a Rails project, with a simple controller logic.
+Create a frontend application.
 
 We need a web form, which has a numeric input field and a submit button.
 
@@ -26,4 +26,6 @@ For example:
 
 That's all.
 
-Extra points: write your code in TDD / BDD, use cucumber, rspec, or other test frameworks
+Extra points:
+
+* write your code in TDD / BDD, use any test frameworks
