@@ -1,0 +1,19 @@
+<h1>Arabic Numbers to English Words</h1>
+
+<%= render :template => "arabic_numbers/new" -%>
+
+<table class="table table-bordered table-hover">
+  <th>#</th>
+  <th>Arabic Number</th>
+  <th>English Word</th>
+  <% @arabic_numbers.each_with_index do |arabic_number, i| %>
+    <tr>
+      <td><%= i + 1 -%></td>
+      <td><%= arabic_number.number_value -%></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>
+
+
+
