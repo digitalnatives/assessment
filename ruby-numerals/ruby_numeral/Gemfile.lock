@@ -55,6 +55,9 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     less (2.5.0)
       commonjs (~> 0.2.7)
     less-rails (2.5.0)
@@ -140,6 +143,7 @@ DEPENDENCIES
   debugger
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   less-rails
   mysql2
   rails (= 4.1.0)

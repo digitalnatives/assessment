@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423183406) do
+ActiveRecord::Schema.define(version: 20140426175748) do
 
   create_table "arabic_numbers", force: true do |t|
-    t.integer  "number_value"
+    t.integer  "number_value", limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end

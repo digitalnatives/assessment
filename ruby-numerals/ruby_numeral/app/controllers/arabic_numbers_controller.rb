@@ -1,6 +1,6 @@
 class ArabicNumbersController < ApplicationController
   def index
-    @arabic_numbers = ArabicNumber.all
+    @arabic_numbers = ArabicNumber.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
