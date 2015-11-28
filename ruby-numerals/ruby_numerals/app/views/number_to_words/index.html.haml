@@ -1,0 +1,9 @@
+= form_for :numbers, url: index_path do |f|
+  %p Plz give me your number
+  =f.number_field :number
+  =f.submit "Save"
+
+-if @num_param != nil
+  %p Your Number was:
+  =@num_param
+  %p feel free to give another one!
