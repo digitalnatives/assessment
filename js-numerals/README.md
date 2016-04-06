@@ -2,7 +2,7 @@
 Javascript/Frontend Programmer - Excercise 1
 =============================
 
-Fork this project with the original description and write your own code.
+Fork this project with the original description and write your own code. Don't use external library for the conversion.
 
 Commit the important milestones and not just the final result!
 
