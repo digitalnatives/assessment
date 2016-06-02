@@ -21,4 +21,5 @@ For example:
 42   == forty-two
 2001 == two thousand and one
 1999 == nineteen hundred and ninety-nine
+17999 == seventeen thousand nine hundred and ninety-nine
 </pre>
