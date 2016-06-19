@@ -15,6 +15,7 @@ alert("JS is connected!");
 
 
 var input = document.querySelector("input");
+var text = document.getElementById("text");
 input.addEventListener("change", function(){
 	alert("you changed something");
 });
