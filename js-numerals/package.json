@@ -1,0 +1,26 @@
+{
+  "name": "js-numerals",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrnemeth/assessment/tree/master/js-numerals"
+  },
+  "author": "Adam Nemeth",
+  "dependencies": {
+    "async": "~0.2.8",
+    "bootstrap": "^3.3.7",
+    "express": "^3.2.6",
+    "jquery": "^3.1.0",
+    "socket.io": "~0.9.14"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "numerals"
+  ],
+  "license": "ISC"
+}
