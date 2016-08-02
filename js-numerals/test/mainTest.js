@@ -1,15 +1,9 @@
-$("#target").submit(function(e){
-    e.preventDefault();
-    var num = $( "input:first" ).val()
-    num = Number(num);
-    if(Number.isInteger(num)){
-        //translate
-        $("#final").text(translate(num));
-    }else{
-        $("#final").text("Please submit a whole number!")
-    }
-    //function to translate numbers into string
-        function translate(n){
+var chai = require('chai');
+var assert = chai.assert;
+
+describe('Main', function() {
+    
+    function translate(n){
     	var print = [];
     	var ones = ["zero","one","two","three","four","five","six","seven","eight","nine"];
     	var tens = ["ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eightteen","nineteen"];
@@ -79,4 +73,58 @@ $("#target").submit(function(e){
     	}
         return print.join("");
     }
-})
+    
+  it('should print three', function() {
+    var res = translate(3);
+
+    assert.equal(res, "three");
+  });
+
+  it('should print eleven', function() {
+    var res = translate(11);
+
+    assert.equal(res, "eleven");
+  });
+  
+  it('should print thirty-two', function() {
+    var res = translate(32);
+
+    assert.equal(res, "thirty-two");
+  });
+  
+  it('should print two hundred', function() {
+    var res = translate(200);
+
+    assert.equal(res, "two hundred");
+  });
+  
+  it('should print three hundred and one', function() {
+    var res = translate(101);
+
+    assert.equal(res, "one hundred and one");
+  });
+  
+  it('should print four hundred and fifty-four', function() {
+    var res = translate(454);
+
+    assert.equal(res, "four hundred and fifty-four");
+  });
+  
+  it('should print two thousand', function() {
+    var res = translate(2000);
+
+    assert.equal(res, "two thousand");
+  });
+  
+  it('should print four thousand and fifteen', function() {
+    var res = translate(4015);
+
+    assert.equal(res, "four thousand and fifteen");
+  });
+  
+  it('should print fifteen hundred and ninety-nine', function() {
+    var res = translate(1599);
+
+    assert.equal(res, "fifteen hundred and ninety-nine");
+  });
+});

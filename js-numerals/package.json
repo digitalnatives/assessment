@@ -18,7 +18,10 @@
   "scripts": {
     "start": "node server.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.0"
+  },
   "keywords": [
     "numerals"
   ],
