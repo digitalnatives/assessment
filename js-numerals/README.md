@@ -29,3 +29,16 @@ That's all.
 Extra points:
 
 * write your code in TDD / BDD, use any test frameworks
+
+For test:
+<pre>
+    npm install
+</pre>
+<pre>
+    karma start
+<pre>
+
+For run the website:
+<pre>
+    npm start
+<pre>
