@@ -25,7 +25,7 @@ function convertNumberToText(number, delimiter = '') {
     var nextNumber = 0
     if(numberInt >=1 && numberInt <= 19) {
        var numberText = simples[numberInt - 1];
-       return result += delimiter + numberText + convertNumberToText('0'); 
+       result = delimiter + numberText; 
     } else if (numberInt >= 20 && numberInt <= 99) {
         var tenseNumber = Math.trunc(numberInt / 10);
         var tenseText = tenses[tenseNumber - 2];
@@ -34,13 +34,13 @@ function convertNumberToText(number, delimiter = '') {
     } else if (numberInt >= 100 && numberInt <= 1999) {
         var hundred = Math.trunc(numberInt / 100);
         nextNumber = calculateNextNumber(numberInt, hundred * 100);
-        result = setResultFromSimples(hundred - 1, 'hundred') + convertNumberToText(String(nextNumber), ' and ');
+        result = setResultFromSimples(hundred - 1, 'hundred ') + convertNumberToText(String(nextNumber), 'and ');
     } else if (numberInt === 2000) {
         return 'two thousand';
     } else if (numberInt >= 2001 && numberInt <= 99999) {
         var thousand = Math.trunc(numberInt / 1000);
         nextNumber = calculateNextNumber(numberInt, thousand * 1000);
-        result = setResultFromSimples(thousand - 1, 'thousand') + convertNumberToText(String(nextNumber), ' and ');
+        result = setResultFromSimples(thousand - 1, 'thousand ') + convertNumberToText(String(nextNumber), 'and ');
     } else {
         return 'Error: Your given number is not supported to translate. Please give a number between 1 - 99999';
     }
