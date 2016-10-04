@@ -15,4 +15,58 @@ describe('convertNumberToText tests', function() {
         expect(result2).not.toEqual(expectedErrorMessage);
         expect(result2).not.toEqual(expectedErrorMessage);
     });
+
+    it('should return seven when the given number is 7', function() {
+        var expectedResult = 'seven';
+        var result = convertNumberToText('7');
+        expect(result).toEqual(expectedResult);
+    });
+
+    it('should return forty-two when the given number is 42', function() {
+        var expectedResult = 'forty-two';
+        var result = convertNumberToText('42');
+        expect(result).toEqual(expectedResult);
+    });
+
+    it('should return two hundred when the given number is 200', function() {
+        var expectedResult = 'two hundred';
+        var result = convertNumberToText('200');
+        expect(result).toEqual(expectedResult);
+    });
+
+    it('should return one hundred and forty-two when the given number is 142', function() {
+        var expectedResult = 'one hundred and forty-two';
+        var result = convertNumberToText('142');
+        expect(result).toEqual(expectedResult);
+    });
+
+    it('should return one hundred and forty-two when the given number is 142', function() {
+        var expectedResult = 'one hundred and forty-two';
+        var result = convertNumberToText('142');
+        expect(result).toEqual(expectedResult);
+    });
+
+    it('should return nineteen hundred and ninety-nine when the given number is 1999', function() {
+        var expectedResult = 'nineteen hundred and ninety-nine';
+        var result = convertNumberToText('1999');
+        expect(result).toEqual(expectedResult);
+    });
+
+    it('should return two thousand when the given number is 2000', function() {
+        var expectedResult = 'two thousand';
+        var result = convertNumberToText('2000');
+        expect(result).toEqual(expectedResult);
+    });
+
+    it('should return two thousand and one when the given number is 2001', function() {
+        var expectedResult = 'two thousand and one';
+        var result = convertNumberToText('2001');
+        expect(result).toEqual(expectedResult);
+    });
+
+    it('should return Error message when you give a not supported number', function() {
+        var expectedResult = 'Error: Your given number is not supported to translate. Please give a number between 1 - 99999';
+        var result = convertNumberToText('200100');
+        expect(result).toEqual(expectedResult);
+    });
 });
