@@ -36,9 +36,9 @@ For test:
 </pre>
 <pre>
     karma start
-<pre>
+</pre>
 
 For run the website:
 <pre>
     npm start
-<pre>
+</pre>
