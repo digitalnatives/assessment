@@ -1,8 +1,9 @@
 
+
 function myFunction() {
     var x = document.getElementById("myForm");
     var text = x.elements[0].value;
-    document.getElementById("answer").innerHTML = convert(Number(text));
+    document.getElementById("answer").innerHTML = convert(text);
 }
 
 
@@ -47,15 +48,19 @@ function convert_tens(num){
 }
 
 function convert(num){
+    if (num=="") return "";
+
     var answer = "";
-    if (num==0) return "zero";
+    num = Number(num);
+    if (isNaN(num)) return "please type an integer";
+    else if (num==0) return "zero";
     else if (num < -999999999) return "number is too small for this script";
     else if (num > 999999999) return "number is too big for this script";
     else if (num < 0) {
         answer += "minus ";
         num*=-1;
     }
-    else if (isNaN(num)) return "please type an integer";
+
 
     var and = "";
     if (num >=100) and = " and ";

@@ -6,11 +6,9 @@
     <body>
         <div id="content">
             <div id="form">
-                <form id="myForm">
+                <form id="myForm" onSubmit="return false;" onkeyup="myFunction()" autocomplete="off">
                   Add an integer: <br>
-                  <input type="text" name="fname">
-                  <br>
-                  <input type="button" onclick="myFunction()" value="Convert">
+                  <input type="text" name="fname" id="inputNumber" >
                 </form>
             </div>
             <p id ="answer"> </p>
