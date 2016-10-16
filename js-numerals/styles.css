@@ -1,0 +1,54 @@
+html { 
+  background: url("images/alga.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+    padding-top: 10%;
+    color: white;
+    font-family: "Comic Sans MS";
+}
+form {
+    margin-bottom:2px;
+}
+#form {
+    width: 30%;
+    padding: 0px;
+    margin-bottom:2px;
+}
+#answer {
+    height: 20px;
+    padding: 0px;
+    margin-top: 5px;
+    display: inline-block;
+}
+#content {
+    margin-left: 0px;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    bottom: 20;
+    left: 40;
+}
+input[type=text], select {
+    width: 150px;
+    padding: 4px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 0px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=button] {
+    width: 60px;
+    background-color: white;
+    color: black;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Comic Sans MS";
+}

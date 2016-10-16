@@ -1,4 +1,10 @@
 
+To see the result please visit:
+
+http://htmlpreview.github.io/?https://github.com/falho/assessment/blob/master/js-numerals/index.html
+
+--------------------
+
 Javascript/Frontend Programmer - Excercise 1
 =============================
 
