@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number translator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/src/format.js"></script>
+  </head>
+  <body>
+    <div class="container container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                Number to translate:
+            </div>
+            <div class="col-md-4">
+                <input type="number" id="number-to-translate" />
+            </div>
+        </div>
+        <div class="row">
+             <div class="col-md-2">
+                <input type="button" id="translate" value="Translate" />
+             </div>
+        </div>
+        <div class="row">
+            <div id="translate-result" class="col-md-6">
+                
+            </div>
+        </div>
+    </div>
+    <script>
+    $('#translate').click(function () {
+        var numberToTranslate = $('#number-to-translate').val();
+        var translateResult = convertNumberToText(numberToTranslate);
+        $('#translate-result').html(translateResult);
+        });
+    </script>
+  </body>
+</html>
