@@ -1,5 +1,5 @@
 
-Javascript/Frontend Programmer - Excercise 1
+Javascript/Frontend Programmer - Exercise 1
 =============================
 
 Fork this project with the original description and write your own code.
@@ -7,7 +7,7 @@ Fork this project with the original description and write your own code.
 Commit the important milestones and not just the final result!
 
 
-Excercise description
+Exercise description
 --------------------
 
 Create a frontend application.
