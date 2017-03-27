@@ -1,0 +1,29 @@
+<h1>Arabic Numbers to English Words</h1>
+
+<br />
+<div class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <%= flash[:notice] -%>
+</div>
+</br />
+
+
+<%= render :template => "arabic_numbers/new" -%>
+<div class="pull-right">
+  <%= paginate @arabic_numbers %>
+</div>
+<table class="table table-bordered table-hover">
+  <th>#</th>
+  <th>Arabic Number</th>
+  <th>English Word</th>
+  <% @arabic_numbers.each_with_index do |arabic_number, i| %>
+    <tr>
+      <td><%= i + 1 -%></td>
+      <td><%= arabic_number.number_value -%></td>
+      <td><%= arabic_number.to_words -%></td>
+    </tr>
+  <% end %>
+</table>
+<div class="pull-right">
+  <%= paginate @arabic_numbers %>
+</div>
