@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Numerals Exercise</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="style.css">
+<body>
+
+
+<div class="container">
+
+	<div class="page-header">
+		<h1>Digital Natives Assessment exercise</h1>
+	</div>
+
+	<div style="width: 30%; margin: 80px auto">
+		<div class="row">
+			<form role="form" onsubmit="return noRefresh()">
+				<div class="form-group">
+					<label for="input" class="sr-only">Number: </label>
+					<input type="number" class="form-control" name="input" id="input" min="0" placeholder="Please add a number input for the application" required>
+				</div>
+				<input type="submit" class="btn btn-primary btn-block">
+			</form>
+		</div>
+		<div class="row" style="margin: 30px 30px">
+			<p>The converted english text is: <span id="text"> you haven't entered a thing yet!</span></p>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="toword.js"></script>
+
+</body>
+
+</html>
