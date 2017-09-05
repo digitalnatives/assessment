@@ -1,0 +1,32 @@
+.InputStyle{
+  border:none;
+  border-bottom: 1px solid #002733;
+  background-color: rgba(199, 212, 216,0);
+}
+.InputStyle:focus{
+  outline-width: 0;
+}
+.ButtonStyle {
+  background-color: rgba(199, 212, 216,0);
+  color:#071d42;
+  margin: 5px;
+  border: none;
+}
+.ButtonStyle:hover {
+  background-color: rgba(199, 212, 216,0);
+  color:#071d42;
+  border: 1px solid #071d42;
+  box-shadow: none;
+}
+.ButtonStyle:focus {
+  background-color: rgba(199, 212, 216,0);
+  color:#071d42;
+  outline-width: 0;
+  box-shadow: none;
+}
+#support {
+  font-size: 0.7em;
+}
+#Fonts {
+  font-family: 'Quicksand', sans-serif;
+}
