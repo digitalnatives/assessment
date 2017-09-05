@@ -95,15 +95,3 @@ let frs3 = frs2.replace("million  hundred","million")
 let finalResult = frs3.replace("million   thousand","million")
 return finalResult
 }
-
-console.log(calculate(0))
-console.log(calculate(00))
-console.log(calculate(-000))
-
-console.log(calculate(-2525))
-console.log(calculate(25125))
-console.log(calculate(251125))
-
-console.log(calculate(2511125))
-console.log(calculate(25111125))
-console.log(calculate(251111125))
