@@ -22,7 +22,7 @@ Commit the important milestones and not just the final result!
 
 Create a frontend application, where you can handle user objects stored on a
 server-based application. The server is located at http://js-assessment-backend.herokuapp.com.
-It provides a REST API for the User objects on the `/users` path.
+It provides a REST API for the User objects on the `/users`path. (`.json` extension is required unless the `Content-Type` header is `application/json`)
 
 A user object has 6 attributes:
 
