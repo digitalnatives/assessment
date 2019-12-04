@@ -1,12 +1,16 @@
-# iOS Developer assessment
+# iOS Developer
 
-Fork this project with the original description and write the code on your fork.
+## Instructions
+
+- Fork this project.
+- Write tests.
+- Commit the important milestones and not just the final result.
 
 ## Exercise description
 
 Create an iOS app that lists the issues of a GitHub repository using the official [GitHub API]( https://developer.github.com/), you can choose between REST and GraphQL.
 
-### Requirements:
+### Requirements
 
 - Display the list of issues
 	- Open/Closed switch filter on the list
@@ -34,7 +38,7 @@ Create an iOS app that lists the issues of a GitHub repository using the officia
 	- only the text part is required
 	- but fell free to go with markdown rendering, code highlight and images if you like
 
-## Notes:
+## Notes
 
 - You will make the UI decisions, no need for anything fancy though, only if you like some extra points ;)
 - The app should
@@ -44,7 +48,7 @@ Create an iOS app that lists the issues of a GitHub repository using the officia
 - You are free to choose any libraries you feel like, but keep the project as simple and organized as possible
 - Explaining how to build your project if it's needed
 
-### What we'll evaluate:
+### What we'll evaluate
 
 - Working app
 - Tests

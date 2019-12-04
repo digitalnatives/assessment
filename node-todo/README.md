@@ -1,6 +1,12 @@
+# NodeJS Developer - Exercise 1
 
-Node developer - Exercise 1
-=============================
+## Instructions
+
+- Fork this project.
+- Write tests.
+- Commit the important milestones and not just the final result.
+
+## Exercise description
 
 Create a RESTful API that provides access to a collection called "todos" that contains just the following fields:
 

@@ -1,18 +1,15 @@
+# Elm/Front-end Developer
 
-Elm/Frontend Programmer - Exercise 1
-=============================
+## Instructions
 
-Fork this project with the original description and write your own code. Don't use external library for the conversion.
+- Fork this project.
+- Write tests.
+- Don't use external libraries for the conversion.
+- Commit the important milestones and not just the final result.
 
-Commit the important milestones and not just the final result!
+## Exercise description
 
-
-Exercise description
---------------------
-
-Create a frontend application.
-
-We need a web form, which has a numeric input field and a submit button.
+Create an application that contains a web form, which has a numeric input field and a submit button.
 
 When user gives an arabic number, the system shows the english phrase of the number.
 
@@ -26,7 +23,3 @@ For example:
 </pre>
 
 That's all.
-
-Extra points:
-
-* write your code in TDD / BDD, use any test frameworks
