@@ -1,28 +1,20 @@
 import React, { useState } from "react";
 import "./Form.css";
+import convertToWords from "../utilities/convertToWords";
+import validation from "../utilities/formValidation";
 
 const Form = () => {
   const [errors, setErrors] = useState("");
-
-  const validate = value => {
-    let error = "";
-    if (!value) {
-      error = "Amount is required!";
-      setErrors(error);
-      return false;
-    } else if (!/^[0-9,]*$/.test(value)) {
-      error = "Invalid entry, please enter a digit or a digit with commas";
-      setErrors(error);
-      return false;
-    } else {
-      setErrors(error);
-      return true;
-    }
-  };
+  const [amountInWords, setamountInWords] = useState("");
 
   const handleSubmit = event => {
     event.preventDefault();
-    validate(event.target.amount.value);
+    if (validation(event.target.amount.value, setErrors)) {
+      const result = convertToWords(event.target.amount.value);
+      return setamountInWords(result);
+    }
+    setamountInWords("");
+    return;
   };
 
   return (
@@ -39,7 +31,7 @@ const Form = () => {
           <button>Convert To Words</button>
         </form>
         <hr />
-        <p></p>
+        <p>{amountInWords}</p>
       </div>
     </div>
   );
