@@ -23,27 +23,27 @@ code {
 
 h1{
   margin-top:20vh;
-  text-align: center;
 }
 .center{
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 .darkBG{
   background-color: darkgreen;
   color: white;
 }
-.inputField{
-  width: 50%;
-  font-size: x-large;
+.inputField, button, .outputBox{
+  font-size: calc(1.5vw + 2vh);
 }
-button{
-  font-size: x-large;
+.inputField{
+  width: 30%;
 }
 .outputBox{
   border-radius: 20px;
   margin: 2vh;
-  background-color: rgba(100, 255,100, 0.4);
+  background-color: rgba(100, 255,100, 0.8);
+  color:red
 }
 .hidden{
   display: none;
