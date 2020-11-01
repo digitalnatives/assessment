@@ -1,4 +1,4 @@
-# NodeJS Developer - Exercise 1
+# Tasks API
 
 ## Instructions
 
@@ -19,28 +19,28 @@ The API must accept JSON request body, and must provide JSON response body.
 
 ## Endpoints
 
-### GET /todos
+### GET /tasks
 
-List all of the todos as an array of the todo objects.
+List all of the tasks as an array of the todo objects.
 
-### POST /todos
+### POST /tasks
 
-Creates a new todo, sets the given fields from the request body. Returns the new todo object.
+Creates a new task, sets the given fields from the request body. Returns the new task object.
 
-### GET /todos/:id
+### GET /tasks/:id
 
-Returns the todo object.
+Returns the task object.
 
-### PUT /todos/:id
+### PUT /tasks/:id
 
-Updates the given fields in the todo. Returns the new todo object.
+Updates the given fields in the task. Returns the new task object.
 
-### DELETE /todos/:id
+### DELETE /tasks/:id
 
-Removes a todo from the collection.
+Removes a task from the collection.
 
 ## Tasks
 
-1. Save all of the todos in a JSON file, if any modification happens. Load the collection from this file when the server restarts
-2. Remove todos that is done for 5 minutes
-3. Create unit tests for the API
+1. Save all of the tasks in a JSON file, if any modification happens. Load the collection from this file when the server restarts.
+2. Remove tasks that are marked as done for 5 minutes.
+3. Create unit tests for the API.

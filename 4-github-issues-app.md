@@ -1,4 +1,4 @@
-# iOS Developer
+# GitHub Issues App
 
 ## Instructions
 
@@ -8,7 +8,7 @@
 
 ## Exercise description
 
-Create an iOS app that lists the issues of a GitHub repository using the official [GitHub API]( https://developer.github.com/), you can choose between REST and GraphQL.
+Create an app that lists the issues of a GitHub repository using the official [GitHub API]( https://developer.github.com/), you can choose between REST and GraphQL.
 
 ### Requirements
 

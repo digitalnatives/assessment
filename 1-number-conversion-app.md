@@ -1,4 +1,4 @@
-# Elm/Front-end Developer
+# Number Conversion App
 
 ## Instructions
 
@@ -11,7 +11,7 @@
 
 Create an application that contains a web form, which has a numeric input field and a submit button.
 
-When user gives an arabic number, the system shows the english phrase of the number.
+When the user gives an arabic number, the system shows the english phrase of that number.
 
 For example:
 <pre>

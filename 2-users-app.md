@@ -1,4 +1,4 @@
-# JavaScript/Front-end Developer - User List
+# Users App
 
 ## Instructions
 
