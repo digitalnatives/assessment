@@ -23,3 +23,14 @@ For example:
 </pre>
 
 That's all.
+
+## My solution description
+
+- I kept everything extremely light-weight. Used no external libaries or frameworks for the conversion and testing as I was instructed ( I could use an actual testing framework if needed)
+- Since the examples for numbers in thousands seem contradictory (2001 vs 1999), I decided to go with a sort of mix so 2001 would two thousand one
+- The code doesn't check for non integers or max integers although it could be added. But the input field rejects an empty string
+- Trailing 0s at the begining cause no issues due to how the conversion works
+- An example of the conversion format for 123456789 = One hundred and twenty-three million and four hundred and fifty-six thousand seven hundred and eighty-nine
+Everything is joined with an 'and' except thousands as mentioned before
+- The input fields allowed characters (e,+,-) don't break the code (just returns an empty string which shows up for the user as "Enter a number"), but they aren't functional.
+
