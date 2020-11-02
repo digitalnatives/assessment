@@ -11,10 +11,6 @@ body {
   line-height: 1.8;
 }
 
-a {
-  text-decoration: none;
-}
-
 #container {
   background-color: #f4f4f4;
   display: flex;
