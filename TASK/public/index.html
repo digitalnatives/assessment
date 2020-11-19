@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <script src="script.js"></script>
-    <title>NUMERALS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <script src="script.js"></script>
+  <title>NUMERALS</title>
 </head>
+
 <body>
-    <h1>NUMERALS</h1>
-    <p>Required fields <strong><abbr title="required">*</abbr></strong>.</p>
-    <section>
-        <h2>Select a Language</h2>
-        <fieldset>
-          <legend>Language</legend>
-          <ul>
-              <li>
-                <label for="lang1">
-                  <input type="radio" id="lang1" name="lang" value="HU" >
-                  Hungarian
-                </label>
-              </li>
-              <li>
-                <label for="lang2">
-                  <input type="radio" id="lang2" name="lang" value="EN">
-                  English
-                </label>
-              </li>
-              <li> 
-                <label for="lang3"> 
-                  <input type="radio" id="lang3" name="lang" value="SP">
-                  Spanish 
-                </label> 
-              </li>
-          </ul>
-        </fieldset>
-        <h2>Enter a Number</h2>
-        <p>
-          <label for="number">
-            <span>Input: </span>
-            <strong><abbr title="required">*</abbr></strong>
+  <h1>NUMERALS</h1>
+  <p>Required fields <strong><abbr title="required">*</abbr></strong>.</p>
+  <section>
+    <h2>Select a Language</h2>
+    <fieldset>
+      <legend>Language</legend>
+      <ul>
+        <li>
+          <label for="lang1">
+            <input type="radio" id="lang1" name="lang" value="HU">
+            Hungarian
           </label>
-          <input type="number" id="input" name="number">
-        </p>
-    </section>   
-    <section>
-        <h2>Number in words</h2>
-        <p>
-          <label for="number">
-            <span>Output:</span>            
+        </li>
+        <li>
+          <label for="lang2">
+            <input type="radio" id="lang2" name="lang" value="EN">
+            English
           </label>
-          <input type="text" id="output" name="text">
-        </p>
+        </li>
+        <li>
+          <label for="lang3">
+            <input type="radio" id="lang3" name="lang" value="SP">
+            Spanish
+          </label>
+        </li>
+      </ul>
+    </fieldset>
+    <h2>Enter a Number</h2>
+    <p>
+      <label for="number">
+        <span>Input: </span>
+        <strong><abbr title="required">*</abbr></strong>
+      </label>
+      <input type="number" id="input" name="number" placeholder="Number" list="test" min="1" max="9999999999">
+    </p>
+  </section>
+  <section>
+    <p>
+      <label for="output">The spelled out number</label>
+
+      <textarea id="output" name="output" rows="5" cols="33">
+        </TExtarea>
+      </p>
         <p>
     </section> 
     <p> <button type="submit">Spell the number</button> </p>
     </body>
-    </html>    
+    </html>
+    <!-- // 7    == seven
+    // 42   == forty-two
+    // 2001 == two thousand and one
+    // 1999 == nineteen hundred and ninety-nine
+    // 17999 == seventeen thousand nine hundred and ninety-nine -->
+    <datalist id="test">
+      <option value="42">
+      <option value="2001">
+      <option value="1999">
+      <option value="17999">
+  </datalist>   
 </body>
 </html>
