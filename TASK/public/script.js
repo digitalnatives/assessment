@@ -4,9 +4,9 @@ const contactObj = {
   lastName: "",
   contact: {
     mobile: "+36201234567",
-    email: "first.last@mail.com"
-  }
-}
+    email: "first.last@mail.com",
+  },
+};
 
 const dictionary = {
   HU: {},
@@ -88,8 +88,16 @@ const orders = [
 // numerals - words
 const ones = dictionary.EN;
 
-
 // MODULE: SCRIPT
+
+// To be improved
+const otherStyle = (number) => {
+  const thousands = getPlaceValues(Math.floor(number / 100));
+  const ones = number % 100 != 0 ? `and ${getPlaceValues(number % 100)}` : ``;
+
+  return `${thousands} ${orders[2].suffix} ${ones}`;
+};
+
 const getPlaceValues = (num) => {
   let hit = true;
   let spelling = "";
@@ -130,12 +138,12 @@ const getGroups = (num) => {
   return groups;
 };
 
-const process = (num)  =>  {
+const process = (num) => {
   const periods = getGroups(num.toString());
 
-  let spelled = '';
-  let formatted = '';
-  let separator = ' ';
+  let spelled = "";
+  let formatted = "";
+  let separator = " ";
   periods.forEach((period, index, thisObj) => {
     spelled =
       period != 0
@@ -145,36 +153,42 @@ const process = (num)  =>  {
           }${separator}`
         : spelled;
 
-      formatted =
-        period != 0
-        ? formatted +
-          `${period}${separator}`
-        : formatted;
+    formatted = period != 0 ? formatted + `${period}${separator}` : formatted;
   });
   console.log(`${formatted} -> ${spelled}`);
 
   return {
     formatted,
-    spelled
-  }
-
+    spelled,
+  };
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", (event) => {
-    console.log(event.target.getAttribute("type"))
-  })
-    document.addEventListener("keydown", (event) => {
-    console.log(event.target.getAttribute("id"))
+    console.log(event.target.getAttribute("type"));
+  });
+  document.addEventListener("keydown", (event) => {
+    console.log(event.target.getAttribute("id"));
     if (event.target.getAttribute("id") === "input" && event.key === "Enter") {
-
       const number = event.target.value;
 
       const spelledObj = process(number);
 
+      document.getElementById("otherWay").style.display = 'none';
+
       document.getElementById("spelled").textContent = spelledObj.spelled;
       document.getElementById("formatted").value = spelledObj.formatted;
 
+      // Call US/UK styles - to be improved
+      let ukUsa = '';
+      if (number.length === 4) {
+        if (number % 100 != 0) ukUsa = `USA style --> ${otherStyle(number)}`;
+        if (number % 100 == 0 && number > 1000 && number <= 2000)
+        ukUsa = `UK style--> ${otherStyle(number)}`;
+
+        document.getElementById("otherWay").style.display = 'block';
+        document.getElementById("otherWay").textContent = ukUsa;
+      }
     }
   });
 
