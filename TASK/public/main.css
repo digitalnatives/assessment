@@ -1,0 +1,15 @@
+:root {
+    --background-color: #eee;
+    --max-width: 640px;
+  }
+  * {
+    margin: 0px;
+    padding: 5px;
+  }
+
+  body {
+    background-color: var(--background-color, #eee);
+    font: 16px Arial, tahoma;
+    max-width: var(--max-width, 640px);
+    margin: auto;
+  }
