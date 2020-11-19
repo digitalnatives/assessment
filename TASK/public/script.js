@@ -105,47 +105,101 @@ const getPlaceValues = (num) => {
   return spelling;
 };
 
+const getGroups = (num) => {
+  const wrk_arr = num.split("").map((digit) => parseInt(digit));
+  const len =
+    parseInt(wrk_arr.length / PERIOD) +
+    parseInt(+Boolean(wrk_arr.length % PERIOD || false));
+  const groups = [];
+  let end = undefined; // The undefined property indicates that a variable has not been assigned a value, or not declared at all
+  for (let i = 1; i <= len; i++) {
+    const start = -(PERIOD * i);
+    groups.unshift(wrk_arr.slice(start, end).join(""));
+    end = start;
+  }
+
+  return groups;
+};
+
+const process = (num)  =>  {
+  const periods = getGroups(num.toString());
+
+  let spelled = '';
+  let formatted = '';
+  let separator = ' ';
+  periods.forEach((period, index, thisObj) => {
+    spelled =
+      period != 0
+        ? spelled +
+          `${getPlaceValues(+period).trim()}  ${
+            groups[thisObj.length - index]
+          }${separator}`
+        : spelled;
+
+      formatted =
+        period != 0
+        ? formatted +
+          `${period}${separator}`
+        : formatted;
+  });
+  console.log(`${formatted} -> ${spelled}`);
+
+  return {
+    formatted,
+    spelled
+  }
+
+};
+
 document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("keydown", (event) => {
+    if (event.target.getAttribute("id") === "input" && event.key === "Enter") {
+      console.log(`${event.target.getAttribute("id")}: ${event.target.value}`);
+
+      const number = event.target.value;
+
+      const spelledObj = process(number);
+
+      document.getElementById("output").value = spelledObj.spelled;
+
+    }
+  });
+
+
+  return;
   // 7    == seven
   // 42   == forty-two
   // 2001 == two thousand and one
   // 1999 == nineteen hundred and ninety-nine
   // 17999 == seventeen thousand nine hundred and ninety-nine
-
   for (let i = 0; i < 10; i++) {
     const lowerBound = 1;
-    const upperBound = Math.pow(10, 12);
+    const upperBound = Math.pow(10, 5);
     let num =
       Math.floor(Math.random() * (upperBound - lowerBound)) + lowerBound;
 
     // ****************************************************************************
-    const periods = ((num) => {
-      const arr = num.split("").map((digit) => parseInt(digit));
-      const len =
-        parseInt(arr.length / PERIOD) +
-        parseInt(+Boolean(arr.length % PERIOD || false));
-      const periods = [];
-      let end = undefined; // The undefined property indicates that a variable has not been assigned a value, or not declared at all
-      for (let i = 1; i <= len; i++) {
-        const start = -(PERIOD * i);
-        periods.unshift(arr.slice(start, end).join(""));
-        end = start;
-      }
+    const periods = getGroups(num.toString());
 
-      return periods;
-    })(num.toString());
-    let str = "";
-    let separator = " ";
+    let spelled = '';
+    let formatted = '';
+    let separator = ' ';
     periods.forEach((period, index, thisObj) => {
-      str =
+      spelled =
         period != 0
-          ? str +
+          ? spelled +
             `${getPlaceValues(+period).trim()}  ${
               groups[thisObj.length - index]
             }${separator}`
-          : str;
+          : spelled;
+
+        formatted =
+          period != 0
+          ? formatted +
+            `${period}${separator}`
+          : formatted;
     });
-    console.log(`${num} -> ${str}`);
+    console.log(`${formatted} -> ${spelled}`);
 
     // ****************************************************************************
   }
