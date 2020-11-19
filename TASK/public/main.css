@@ -1,6 +1,6 @@
 :root {
     --background-color: #eee;
-    --max-width: 640px;
+    --max-width: 768px;
   }
   * {
     margin: 0px;
@@ -10,6 +10,55 @@
   body {
     background-color: var(--background-color, #eee);
     font: 16px Arial, tahoma;
-    max-width: var(--max-width, 640px);
+    max-width: var(--max-width, 768x);
     margin: auto;
   }
+  
+  input[name= number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
+  }
+  pre {
+    display: block;
+    font-family: monospace;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    margin: 1em 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    #contact {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+    }
+    
+    @media only screen and (max-width: 640px) {
+      #desc {
+        display: none;
+      }
+      .numbers {
+        grid-template-columns: 1fr;
+      }
+    #contact {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+
+    

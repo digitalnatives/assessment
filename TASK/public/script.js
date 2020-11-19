@@ -1,4 +1,13 @@
 // MODULE: DATABASE
+const contactObj = {
+  firstName: "Alejandro",
+  lastName: "",
+  contact: {
+    mobile: "+36201234567",
+    email: "first.last@mail.com"
+  }
+}
+
 const dictionary = {
   HU: {},
   EN: {
@@ -152,55 +161,29 @@ const process = (num)  =>  {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.addEventListener("keydown", (event) => {
+  document.addEventListener("click", (event) => {
+    console.log(event.target.getAttribute("type"))
+  })
+    document.addEventListener("keydown", (event) => {
+    console.log(event.target.getAttribute("id"))
     if (event.target.getAttribute("id") === "input" && event.key === "Enter") {
-      console.log(`${event.target.getAttribute("id")}: ${event.target.value}`);
 
       const number = event.target.value;
 
       const spelledObj = process(number);
 
-      document.getElementById("output").value = spelledObj.spelled;
+      document.getElementById("spelled").textContent = spelledObj.spelled;
+      document.getElementById("formatted").value = spelledObj.formatted;
 
     }
   });
 
-
-  return;
-  // 7    == seven
-  // 42   == forty-two
-  // 2001 == two thousand and one
-  // 1999 == nineteen hundred and ninety-nine
-  // 17999 == seventeen thousand nine hundred and ninety-nine
-  for (let i = 0; i < 10; i++) {
-    const lowerBound = 1;
-    const upperBound = Math.pow(10, 5);
-    let num =
-      Math.floor(Math.random() * (upperBound - lowerBound)) + lowerBound;
-
-    // ****************************************************************************
-    const periods = getGroups(num.toString());
-
-    let spelled = '';
-    let formatted = '';
-    let separator = ' ';
-    periods.forEach((period, index, thisObj) => {
-      spelled =
-        period != 0
-          ? spelled +
-            `${getPlaceValues(+period).trim()}  ${
-              groups[thisObj.length - index]
-            }${separator}`
-          : spelled;
-
-        formatted =
-          period != 0
-          ? formatted +
-            `${period}${separator}`
-          : formatted;
-    });
-    console.log(`${formatted} -> ${spelled}`);
-
-    // ****************************************************************************
-  }
+  // DIV - Contact information
+  document.getElementById("contact").innerHTML = `                
+  <div>${contactObj.firstName} </div> 
+  <div>&#9742; ${contactObj.contact.mobile} </div> 
+  <div>&#10148; ${contactObj.contact.email}</div>                
+`;
 });
+
+module.exports = process;
