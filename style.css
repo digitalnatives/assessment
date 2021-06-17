@@ -1,0 +1,71 @@
+body {
+    background: #8c6cce;
+    margin: 15px;
+    margin-top: 50px;;
+}
+
+.conversion-tool, .conversion-tool * {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.conversion-tool {
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 15px #b49cdc;
+}
+
+.conversion-tool__logo-container {
+    padding: 30px;
+    background: #6944c4#8c6cce;
+}
+
+.conversion-tool__logo {
+    display: block;
+    max-width: 125px;
+    margin: 0 auto;
+}
+
+.conversion-tool__content {
+    padding: 30px;
+    background: #b49cdc;
+}
+
+.conversion-tool__header {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.conversion-tool__input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #d6ccef;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.5s;
+}
+
+.conversion-tool__input:focus {
+    border-color: #9a81d7;
+}
+
+.conversion-tool__input::placeholder{
+    color: #9a81d7;
+}
+
+.conversion-tool__output {
+    padding: 10px;
+    color: #6944c4;
+    font-weight: bold;
+    width: 100%;
+    border: none;
+    outline: none;
+    border: 5px;
+    cursor: pointer;
+}
