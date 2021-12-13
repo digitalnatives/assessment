@@ -9,7 +9,7 @@
 ## Todos
 - [ X ] Write down all arabic number rules
 - [ X ] Choose Stack
-- [ ] Create Business Logic Plan
+- [ X ] Create Business Logic Plan
 - [ ] Create Wireframes
 - [ ] Create tests (TDD)
 - [ ] Create code that succeed
