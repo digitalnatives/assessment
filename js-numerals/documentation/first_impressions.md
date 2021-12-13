@@ -10,7 +10,7 @@
 - [ X ] Write down all arabic number rules
 - [ X ] Choose Stack
 - [ X ] Create Business Logic Plan
-- [ ] Create Wireframes
+- [ X ] Create Wireframes
 - [ ] Create tests (TDD)
 - [ ] Create code that succeed
 - [ ] Refactor
