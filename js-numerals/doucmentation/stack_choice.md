@@ -1,3 +1,7 @@
+# Chosen
+## Flutter + Firebase deploy
+---
+---
 # Choosing Stack
 # Frontend
 ## Flutter
@@ -30,5 +34,6 @@
 - Easy deployment
 ### Cons
 - Hard / Impossible to add new features if the services aren't compatible with it
+
 
 
