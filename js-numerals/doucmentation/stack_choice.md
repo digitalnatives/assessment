@@ -1,15 +1,12 @@
 # Choosing Stack
-
-## Flutter + Firebase
+# Frontend
+## Flutter
 ### Pros
-- Free BaaS (for prototyping)
-- Fast to develop with(Flutter - Hot reaload, Firebase - preimplemented, tested services)
+- Fast to develop with(Hot-reload)
 - Great performance
-- Can deploy with one line of code for free
-- Easily integrated with anything
 - Great library support (pub.dev)
 ### Cons
-- Because Firebase is a BaaS, it's services are given and hard the add to
+- Writen in Dart and not Javascript
 
 ## Native Javascrip (HTML, CSS)
 ### Pros
@@ -17,7 +14,6 @@
 ### Cons
 - Not suggested
 - Gets easily out of control
-- Backend needed
 
 ## Javascript frameworks
 ### Pros
@@ -25,4 +21,14 @@
 - Great library support (Angular, Vue)
 ### Cons
 - Too many choices (JS frameworks, CSS frameworks, etc.)
-- Backend needed
+
+# Deployment
+## Firebase
+### Pros
+- Possible backend for future, with many tested services
+- Free (for prototyping)
+- Easy deployment
+### Cons
+- Hard / Impossible to add new features if the services aren't compatible with it
+
+
