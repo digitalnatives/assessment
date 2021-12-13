@@ -8,7 +8,7 @@
 - Can't use external libraries for the conversion.
 ## Todos
 - [ X ] Write down all arabic number rules
-- [ ] Choose Stack
+- [ X ] Choose Stack
 - [ ] Create Business Logic Plan
 - [ ] Create Wireframes
 - [ ] Create tests (TDD)
