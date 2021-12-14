@@ -1,15 +1,15 @@
+import 'dart:math';
+
 import 'package:number_converter/src/core/utils/constants.dart';
 
 class NumberConverter implements INumberConverter {
-
   @override
   bool isOuterAndNeeded(int N) {
-    // TODO: implement isOuterAndNeeded
-    throw UnimplementedError();
+    return (N % 1000 < 100 && N % 1000 != 0);
   }
 
   @override
-  String threeDigit(int N) {
+  String threeDigit(int N, {bool showZero = true}) {
     int length = N.toString().length;
     if (length > 3) throw RangeError("");
     if (length == 3) {
@@ -19,7 +19,7 @@ class NumberConverter implements INumberConverter {
         return '${_singles(N ~/ 100)} $kHundred';
       }
     } else {
-      return twoDigit(N);
+      return twoDigit(N, showZero: showZero);
     }
   }
 
@@ -47,6 +47,10 @@ class NumberConverter implements INumberConverter {
       default:
         throw Exception();
     }
+  }
+
+  bool _isSpaceNeeded(int N, powerOfTen) {
+    return N % (pow(10, powerOfTen)) != 0;
   }
 
   String _singles(int N, {bool showZero = true}) {
@@ -104,10 +108,10 @@ class NumberConverter implements INumberConverter {
   }
 
   @override
-  String twoDigit(int N) {
+  String twoDigit(int N, {bool showZero = true}) {
     int length = N.toString().length;
     if (length > 2 || length == 0) throw RangeError("");
-    if (length == 1) return _singles(N);
+    if (length == 1) return _singles(N, showZero: showZero);
 
     switch (N) {
       case 10:
@@ -160,10 +164,62 @@ class NumberConverter implements INumberConverter {
         }
     }
   }
+
+  @override
+  String convert(int N) {
+    int length = N.toString().length;
+    if (length > 15 || length < 1) throw RangeError("");
+    if (length < 4) return threeDigit(N);
+    String result = '';
+    int trillions = N ~/ pow(10, 12);
+    int billions = (N - (trillions * pow(10, 12))) ~/ pow(10, 9);
+    int millions =
+        (N - (trillions * pow(10, 12) + billions * pow(10, 9))) ~/ pow(10, 6);
+    int thousands = (N -
+            (trillions * pow(10, 12) +
+                billions * pow(10, 9) +
+                millions * pow(10, 6))) ~/
+        pow(10, 3);
+    if (trillions > 0) {
+      result += "${threeDigit(trillions)} $kTrillion";
+      if (_isSpaceNeeded(N, 12)) {
+        result += ' ';
+      }
+    }
+
+    if (billions > 0) {
+      result += "${threeDigit(billions)} $kBillion";
+      if (_isSpaceNeeded(N, 9)) {
+        result += ' ';
+      }
+    }
+
+    if (millions > 0) {
+      result += "${threeDigit(millions)} $kMillion";
+      if (_isSpaceNeeded(N, 6)) {
+        result += ' ';
+      }
+    }
+
+    if (thousands > 0) {
+      result += "${threeDigit(thousands)} $kThousand";
+      if (_isSpaceNeeded(N, 3)) {
+        result += ' ';
+      }
+    }
+
+    if (isOuterAndNeeded(N)) {
+      result += "and ";
+    }
+
+    result += threeDigit(N % 1000, showZero: false);
+    return result;
+  }
 }
 
 abstract class INumberConverter {
   String twoDigit(int N);
   String threeDigit(int N);
+  String convert(int N);
   bool isOuterAndNeeded(int N);
 }
