@@ -168,7 +168,7 @@ class NumberConverter implements INumberConverter {
   @override
   String convert(int N) {
     int length = N.toString().length;
-    if (length > 12 || length < 1) throw RangeError("");
+    if (length > 15 || length < 1) throw RangeError("");
     if (length < 4) return threeDigit(N);
     String result = '';
     int trillions = N ~/ pow(10, 12);
@@ -183,31 +183,31 @@ class NumberConverter implements INumberConverter {
     if (trillions > 0) {
       result += "${threeDigit(trillions)} $kTrillion";
       if (_isSpaceNeeded(N, 12)) {
-      result += ' ';
+        result += ' ';
+      }
     }
-    }
-    
+
     if (billions > 0) {
       result += "${threeDigit(billions)} $kBillion";
       if (_isSpaceNeeded(N, 9)) {
-      result += ' ';
+        result += ' ';
+      }
     }
-    }
-    
+
     if (millions > 0) {
       result += "${threeDigit(millions)} $kMillion";
       if (_isSpaceNeeded(N, 6)) {
-      result += ' ';
+        result += ' ';
+      }
     }
-    }
-    
+
     if (thousands > 0) {
       result += "${threeDigit(thousands)} $kThousand";
       if (_isSpaceNeeded(N, 3)) {
-      result += ' ';
+        result += ' ';
+      }
     }
-    }
-    
+
     if (isOuterAndNeeded(N)) {
       result += "and ";
     }
