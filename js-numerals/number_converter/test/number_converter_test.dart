@@ -392,21 +392,119 @@ void main() {
               '-' +
               kNine);
     });
+    test('Convert 1 000 000 000 000', () {
+      expect(
+          NumberConverter().convert(1000000000000),
+          kOne +
+              ' ' +
+              kTrillion);
+    });
+    test('Convert 1 000 000 000 001', () {
+      expect(
+          NumberConverter().convert(1000000000001),
+          kOne +
+              ' ' +
+              kTrillion+ ' and '+kOne);
+    });
+    test('Convert 1 000 000 000 099', () {
+      expect(
+          NumberConverter().convert(1000000000099),
+          kOne +
+              ' ' +
+              kTrillion + ' and '+ kNinety +
+              '-' +
+              kNine);
+    });
+    test('Convert 1 000 000 000 100', () {
+      expect(
+          NumberConverter().convert(1000000000100),
+          kOne +
+              ' ' +
+              kTrillion +' '+kOne+' '+kHundred);
+    });
+    test('Convert 999 999 999 999 999', () {
+      expect(
+          NumberConverter().convert(999999999999999),
+          kNine +
+              ' ' +
+              kHundred +
+              ' and ' +
+              kNinety +
+              '-' +
+              kNine +
+              ' ' +
+              kTrillion +
+              ' ' +
+              kNine +
+              ' ' +
+              kHundred +
+              ' and ' +
+              kNinety +
+              '-' +
+              kNine +
+              ' ' +
+              kBillion +
+              ' ' +
+              kNine +
+              ' ' +
+              kHundred +
+              ' and ' +
+              kNinety +
+              '-' +
+              kNine +
+              ' ' +
+              kMillion +
+              ' ' +
+              kNine +
+              ' ' +
+              kHundred +
+              ' and ' +
+              kNinety +
+              '-' +
+              kNine +
+              ' ' +
+              kThousand +
+              ' ' +
+              kNine +
+              ' ' +
+              kHundred +
+              ' and ' +
+              kNinety +
+              '-' +
+              kNine);
+    });
 
     test('Convert 7', () {
       expect(NumberConverter().convert(7), kSeven);
     });
 
     test('Convert 42', () {
-      expect(NumberConverter().convert(42), kFourty + '-'+kTwo);
+      expect(NumberConverter().convert(42), kFourty + '-' + kTwo);
     });
 
     test('Convert 2001', () {
-      expect(NumberConverter().convert(2001), kTwo +' '+kThousand+' and '+kOne);
+      expect(NumberConverter().convert(2001),
+          kTwo + ' ' + kThousand + ' and ' + kOne);
     });
 
     test('Convert 1300420', () {
-      expect(NumberConverter().convert(1300420), kOne+ ' '+kMillion+' '+kThree +' '+kHundred+' '+kThousand+' '+ kFour +' '+kHundred+' and '+kTwenty);
+      expect(
+          NumberConverter().convert(1300420),
+          kOne +
+              ' ' +
+              kMillion +
+              ' ' +
+              kThree +
+              ' ' +
+              kHundred +
+              ' ' +
+              kThousand +
+              ' ' +
+              kFour +
+              ' ' +
+              kHundred +
+              ' and ' +
+              kTwenty);
     });
   });
 }
