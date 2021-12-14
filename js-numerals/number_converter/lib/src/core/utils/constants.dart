@@ -47,3 +47,10 @@ const String kNumberConnector = '-';
 
 //Regex
 const String kRxNumbers =r'^[0-9]+$';
+
+//Min-Max
+const int kNumberMinLength = 1;
+const int kNumberMaxLength = 15;
+//Messages
+const String kNumberInvalidFormatMessage= "The given number has invalid character(s) in it.";
+const String kNumberInvalidLengthMessage= "Length invalid: $kNumberMinLength - $kNumberMaxLength";
