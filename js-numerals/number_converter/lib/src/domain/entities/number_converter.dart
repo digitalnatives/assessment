@@ -17,24 +17,17 @@ class NumberConverter implements INumberConverter {
   String threeDigit(int N) {
     int length = N.toString().length;
     if (length > 3) throw RangeError("");
-    if(length == 3 )
-    {
-        if( N % 100 != 0)
-        {
-          return '${_singles(N~/100)} hundred and ${twoDigit(N%100)}';
-        }
-        else
-        {
-          return '${_singles(N~/100)} hundred';
-        }
-        
-    }
-    else
-    {
+    if (length == 3) {
+      if (N % 100 != 0) {
+        return '${_singles(N ~/ 100)} $kHundred and ${twoDigit(N % 100)}';
+      } else {
+        return '${_singles(N ~/ 100)} $kHundred';
+      }
+    } else {
       return twoDigit(N);
     }
-    
   }
+
   String _tens(int N) {
     if (N.toString().length != 2) throw RangeError("");
     switch (N ~/ 10) {
