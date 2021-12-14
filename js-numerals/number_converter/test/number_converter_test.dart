@@ -13,20 +13,22 @@ void main()
      test('Convert 100 (Throw Error)', () {
        try{
         NumberConverter().twoDigit(100);
+         fail('Did not throw error');
        }
        catch (e)
        {
-         expect(e, throwsA(RangeError("")));
+         completes;
        }
 
     });
      test('Convert -1 (Throw Error)', () {
        try{
         NumberConverter().twoDigit(-1);
+         fail('Did not throw error');
        }
        catch (e)
        {
-         expect(e, throwsA(RangeError("")));
+         completes;
        }
     });
     
@@ -119,7 +121,7 @@ void main()
       expect(NumberConverter().twoDigit(98), kNinety+'-'+kEight);
     });
      test('Convert 99', () {
-      expect(NumberConverter().twoDigit(99), kNinety+'-'+kEight);
+      expect(NumberConverter().twoDigit(99), kNinety+'-'+kNine);
     });
    
    
