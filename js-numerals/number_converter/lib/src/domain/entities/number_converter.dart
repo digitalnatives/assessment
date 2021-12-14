@@ -1,11 +1,6 @@
 import 'package:number_converter/src/core/utils/constants.dart';
 
 class NumberConverter implements INumberConverter {
-  @override
-  bool isInnerAndNeeded(int N) {
-    // TODO: implement isInnerAndNeeded
-    throw UnimplementedError();
-  }
 
   @override
   bool isOuterAndNeeded(int N) {
@@ -170,6 +165,5 @@ class NumberConverter implements INumberConverter {
 abstract class INumberConverter {
   String twoDigit(int N);
   String threeDigit(int N);
-  bool isInnerAndNeeded(int N);
   bool isOuterAndNeeded(int N);
 }
