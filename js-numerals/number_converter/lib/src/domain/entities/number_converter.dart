@@ -36,7 +36,7 @@ class NumberConverter implements INumberConverter
       default: throw Exception();
     }
   }
-  String _oneDigit(int N, {bool showZero = true})
+  String _singles(int N, {bool showZero = true})
   {
     if(N.toString().length != 1) throw RangeError("");
     switch (N)
@@ -89,7 +89,7 @@ class NumberConverter implements INumberConverter
   String twoDigit(int N) {
     int length = N.toString().length;
     if(length > 2 || length == 0) throw RangeError("");
-    if(length == 1) return _oneDigit(N);
+    if(length == 1) return _singles(N);
 
     switch (N)
     {
@@ -127,7 +127,7 @@ class NumberConverter implements INumberConverter
         
           if(N%10 != 0)
                 {
-                  return '${_tens(N)}-${_oneDigit(N%10, showZero: false)}';
+                  return '${_tens(N)}-${_singles(N%10, showZero: false)}';
                 }
                 else
                 {
