@@ -2,36 +2,29 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:number_converter/src/core/utils/constants.dart';
 import 'package:number_converter/src/domain/entities/number_converter.dart';
 
-void main()
-{
+void main() {
   group('Two digit converter', () {
-    
     test('Convert 0', () {
       expect(NumberConverter().twoDigit(0), kZero);
     });
 
-     test('Convert 100 (Throw Error)', () {
-       try{
+    test('Convert 100 (Throw Error)', () {
+      try {
         NumberConverter().twoDigit(100);
-         fail('Did not throw error');
-       }
-       catch (e)
-       {
-         completes;
-       }
-
+        fail('Did not throw error');
+      } catch (e) {
+        completes;
+      }
     });
-     test('Convert -1 (Throw Error)', () {
-       try{
+    test('Convert -1 (Throw Error)', () {
+      try {
         NumberConverter().twoDigit(-1);
-         fail('Did not throw error');
-       }
-       catch (e)
-       {
-         completes;
-       }
+        fail('Did not throw error');
+      } catch (e) {
+        completes;
+      }
     });
-    
+
     test('Convert 1', () {
       expect(NumberConverter().twoDigit(1), kOne);
     });
@@ -96,34 +89,115 @@ void main()
     test('Convert 20', () {
       expect(NumberConverter().twoDigit(20), kTwenty);
     });
-     test('Convert 21', () {
-      expect(NumberConverter().twoDigit(21), kTwenty+'-'+kOne);
+    test('Convert 21', () {
+      expect(NumberConverter().twoDigit(21), kTwenty + '-' + kOne);
     });
     test('Convert 32', () {
-      expect(NumberConverter().twoDigit(32), kThirty+'-'+kTwo);
+      expect(NumberConverter().twoDigit(32), kThirty + '-' + kTwo);
     });
     test('Convert 43', () {
-      expect(NumberConverter().twoDigit(43), kFourty+'-'+kThree);
+      expect(NumberConverter().twoDigit(43), kFourty + '-' + kThree);
     });
     test('Convert 54', () {
-      expect(NumberConverter().twoDigit(54), kFifty+'-'+kFour);
+      expect(NumberConverter().twoDigit(54), kFifty + '-' + kFour);
     });
     test('Convert 65', () {
-      expect(NumberConverter().twoDigit(65), kSixty+'-'+kFive);
+      expect(NumberConverter().twoDigit(65), kSixty + '-' + kFive);
     });
     test('Convert 76', () {
-      expect(NumberConverter().twoDigit(76), kSeventy+'-'+kSix);
+      expect(NumberConverter().twoDigit(76), kSeventy + '-' + kSix);
     });
     test('Convert 87', () {
-      expect(NumberConverter().twoDigit(87), kEighty+'-'+kSeven);
+      expect(NumberConverter().twoDigit(87), kEighty + '-' + kSeven);
     });
     test('Convert 98', () {
-      expect(NumberConverter().twoDigit(98), kNinety+'-'+kEight);
+      expect(NumberConverter().twoDigit(98), kNinety + '-' + kEight);
     });
-     test('Convert 99', () {
-      expect(NumberConverter().twoDigit(99), kNinety+'-'+kNine);
+    test('Convert 99', () {
+      expect(NumberConverter().twoDigit(99), kNinety + '-' + kNine);
     });
-   
-   
+  });
+
+  group('Three digit converter', () {
+    test('Convert 0', () {
+      expect(NumberConverter().threeDigit(0), kZero);
+    });
+    test('Convert -1 (Throw Error)', () {
+      try {
+        NumberConverter().threeDigit(-1);
+        fail('Did not throw error');
+      } catch (e) {
+        completes;
+      }
+    });
+    test('Convert 1000 (Throw Error)', () {
+      try {
+        NumberConverter().threeDigit(1000);
+        fail('Did not throw error');
+      } catch (e) {
+        completes;
+      }
+    });
+
+    test('Convert 65', () {
+      expect(NumberConverter().threeDigit(65), kSixty + '-' + kFive);
+    });
+    test('Convert 99', () {
+      expect(NumberConverter().threeDigit(99), kNinety + '-' + kNine);
+    });
+    test('Convert 100', () {
+      expect(NumberConverter().threeDigit(100), kOne + ' ' + kHundred);
+    });
+    test('Convert 101', () {
+      expect(NumberConverter().threeDigit(101),
+          kOne + ' ' + kHundred + ' and ' + kOne);
+    });
+    test('Convert 109', () {
+      expect(NumberConverter().threeDigit(109),
+          kOne + ' ' + kHundred + ' and ' + kNine);
+    });
+    test('Convert 110', () {
+      expect(NumberConverter().threeDigit(110),
+          kOne + ' ' + kHundred + ' and ' + kTen);
+    });
+    test('Convert 176', () {
+      expect(NumberConverter().threeDigit(176),
+          kOne + ' ' + kHundred + ' and ' + kSeventy + '-' + kSix);
+    });
+    test('Convert 232', () {
+      expect(NumberConverter().threeDigit(232),
+          kTwo + ' ' + kHundred + ' and ' + kThirty + '-' + kTwo);
+    });
+    test('Convert 309', () {
+      expect(NumberConverter().threeDigit(309),
+          kThree + ' ' + kHundred + ' and ' + kNine);
+    });
+    test('Convert 443', () {
+      expect(NumberConverter().threeDigit(443),
+          kFour + ' ' + kHundred + ' and ' + kFourty + '-' + kThree);
+    });
+    test('Convert 512', () {
+      expect(NumberConverter().threeDigit(512),
+          kFive + ' ' + kHundred + ' and ' + kTwelve);
+    });
+    test('Convert 611', () {
+      expect(NumberConverter().threeDigit(611),
+          kSix + ' ' + kHundred + ' and ' + kEleven);
+    });
+    test('Convert 799', () {
+      expect(NumberConverter().threeDigit(799),
+          kSeven + ' ' + kHundred + ' and ' + kNinety + '-' + kNine);
+    });
+    test('Convert 800', () {
+      expect(NumberConverter().threeDigit(800), kEight + ' ' + kHundred);
+    });
+    test('Convert 904', () {
+      expect(NumberConverter().threeDigit(904),
+          kNine + ' ' + kHundred + ' and ' + kFour);
+    });
+    test('Convert 999', () {
+      expect(NumberConverter().threeDigit(999),
+          kNine + ' ' + kHundred + ' and ' + kNinety + '-' + kNine);
+    });
   });
 }

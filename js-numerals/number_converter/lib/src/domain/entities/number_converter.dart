@@ -15,8 +15,17 @@ class NumberConverter implements INumberConverter {
 
   @override
   String threeDigit(int N) {
-    // TODO: implement threeDigit
-    throw UnimplementedError();
+    int length = N.toString().length;
+    if (length > 3) throw RangeError("");
+    if (length == 3) {
+      if (N % 100 != 0) {
+        return '${_singles(N ~/ 100)} $kHundred and ${twoDigit(N % 100)}';
+      } else {
+        return '${_singles(N ~/ 100)} $kHundred';
+      }
+    } else {
+      return twoDigit(N);
+    }
   }
 
   String _tens(int N) {
