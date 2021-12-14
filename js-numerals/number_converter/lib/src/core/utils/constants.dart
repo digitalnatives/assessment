@@ -44,3 +44,6 @@ const String kTrillion = 'trillion'; //1000 000 000
 
 //Other
 const String kNumberConnector = '-';
+
+//Regex
+const String kRxNumbers =r'^[0-9]+$';
