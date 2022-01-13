@@ -6,8 +6,8 @@ For example:
 <pre>
 7       === seven
 42      === forty-two
+1999    === one thousand nine hundred and ninety-nine
 2001    === two thousand and one
-1999    === nineteen hundred and ninety-nine
 17999   === seventeen thousand nine hundred and ninety-nine
 342251  === three hundred and forty-two thousand two hundred and fifty-one
 1300420 === one million three hundred thousand four hundred and twenty
@@ -21,6 +21,8 @@ Treat this task like a project to create a real-life application, focus on other
 - Don't use external libraries for the conversion.
 - Make the solution pleasant to look at and user friendly in as many aspects as you can.
 - Commit the important milestones and not just the final result.
-- Don't forget to write tests.
+- Don't forget to write tests. We expect the tests to check also the examples above.
+- Try to support numbers as high as you can.
+- (Optional) Try to support British English counting where numbers between 1000 and 2000 are said out using "hundreds". E.g. 1999 === nineteen hundred and ninety-nine
 
 Thank you for your time and happy coding! 🧑‍💻
