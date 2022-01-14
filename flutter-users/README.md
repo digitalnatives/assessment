@@ -32,10 +32,10 @@ A user object has 6 attributes:
 
 ### 1. exercise
 
-Create the application’s first route, where the users are listed. The list
+Create the application’s first screen, where the users are listed. The list
 should contain each user’s `first_name`, `last_name` and `created_at` attributes.
-The list should be able to show the users by **infinite scrolling**
-(the backend doesn’t support paginating at all), display 10 users on each load.
+The backend doesn’t support paginating at all, list should be showing all the users 
+as efficiently as possible.
 
 ### 2. exercise
 
@@ -48,11 +48,12 @@ Use the update action when modifying the status field.
 Add a new feature to the application where it is possible to create new users,
 and where a selected user’s attributes can be modified. You should only be
 able to set the user’s first and last name. Handle validation errors given back
-from the server, display the error message next to the attribute’s label.
+from the server, display the error message below the attribute’s label.
 
 ### 4. exercise
 
 Unfortunately the app's lazy designer disappeared without finalizing his work,
 so we don’t have an exact design for the user list.
 
-Make it nice, visually pleasing.
+Make it nice, visually pleasing. This includes also making it clear for the user
+when the app is currently fetching/updating data.
