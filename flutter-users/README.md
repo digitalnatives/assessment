@@ -34,9 +34,11 @@ A user object has 6 attributes, all of them are non-nullable:
 
 ### exercise #1 - list
 
-Create the application’s first screen, where the users are listed. 
+Create the application’s first screen, where all the users are listed. 
 Each list item should contain the user’s `first_name`, `last_name` 
 and `created_at` attributes.
+Since the backend does not support pagination the app has to display a huge list.
+Make sure the performance is as smooth as it can be.
 
 Users should be ordered by their `created_at` date in descending order.
 
