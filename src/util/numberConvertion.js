@@ -4,7 +4,7 @@ export default function convertToArabic(number){
 
 function createOutput(number){
     const numberLen = number.length;
-    let output = "";
+
     switch (numberLen){
         case 1:
             return zeroToNine[number];
@@ -14,23 +14,35 @@ function createOutput(number){
             const lastTwoDigits = twoDigits(number.slice(-2), true);
             return `${zeroToNine[number[0]]} ${hundreds[0]} ${lastTwoDigits}`;
         case 4:
-            const hundred = zeroToNine[number[1]] === "" ? "" : zeroToNine[number[1]] + " " + hundreds[0];
-            return `${zeroToNine[number[0]]} ${hundreds[1]} ${hundred} ${twoDigits(number.slice(-2), true)}`;
+            return `${zeroToNine[number[0]]} ${hundreds[1]} ${getHundred(number.slice(-3))} ${twoDigits(number.slice(-2), true)}`;
+        case 5:
+            return `${twoDigits(number.slice(0, 2), false)} ${hundreds[1]} ${getHundred(number.slice(-3))} ${twoDigits(number.slice(-2), true)}`
+        case 6:
+            return `${zeroToNine[number[0]]} ${hundreds[0]} ${twoDigits(number.slice(1, 3), true)} ${hundreds[1]} ${getHundred(number.slice(-3))} ${twoDigits(number.slice(-2), true)}`
+        case 7:
+            return `${zeroToNine[number[0]]} ${hundreds[2]} ${zeroToNine[number[1]]} ${hundreds[0]} ${twoDigits(number.slice(2, 4), true)} ${hundreds[1]} ${getHundred(number.slice(-3))} ${twoDigits(number.slice(-2), true)}`
+        default:
+            return "Type in a number!"
     }
 }
 
-function twoDigits(twoDigits, numberLenGreaterThanTwo) {
+function twoDigits(twoDigits, needAnd) {
     let result;
     if(parseInt(twoDigits) === 0){
         return ""
     } else if (parseInt(twoDigits) < 10) {
         result = zeroToNine[twoDigits[1]];
     } else if (parseInt(twoDigits) >= 20) {
-        result = tensMultiple[twoDigits[0]] + " " + zeroToNine[twoDigits[1]]
+        const secondNumber = zeroToNine[twoDigits[1]] === "" ? "" : "-" + zeroToNine[twoDigits[1]]
+        result = tensMultiple[twoDigits[0]] + secondNumber
     } else {
         result = tenToTwenty[twoDigits];
     }
-    return numberLenGreaterThanTwo ? "and " + result : result;
+    return needAnd ? "and " + result : result;
+}
+
+function getHundred(hundred){
+    return zeroToNine[hundred[0]] === "" ? "" : zeroToNine[hundred[0]] + " " + hundreds[0]
 }
 
 const zeroToNine = {
@@ -70,4 +82,4 @@ const tensMultiple = {
     "9": "ninety",
 }
 
-const hundreds = ["hundred", "thousand"]
+const hundreds = ["hundred", "thousand", "million"]
