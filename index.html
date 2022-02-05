@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title> Number convertion tool </title>
-<link rel="stylesheet" href="style.css">
-<script>
-  let units = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
-            "Ten", "Eleven", "Twelve", "Thirteen", "Tourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+    <title> Number convertion tool </title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let units = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+            "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+        ];
 
-  let tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
-  
-  
-function convertNumber (number) {
-  var number = document.getElementById("number").value; 
-  var text = convert(number);
-  document.getElementById("demo").innerHTML = text;
-}
+        let tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 
-function convert (n) {
-    if(n<0){
-      const text = "minus " + convert(-n);
-      return text;
-    } else if(n < 20){
-        return units[n];
-    } else if(n < 100){
-            return tens[Math.floor(n / 10)] + ((n % 10 != 0) ? " " : "") + units[n % 10];
-        } else if(n < 1000){
-            return units[Math.floor(n / 100)] + " hundred" + ((n % 100 != 0) ? " and " : "") + convert(n % 100);
-        } else if(n < 100000){
-            return convert(Math.floor(n / 1000)) + " thousand" + ((n % 100000 != 0) ?  " " : "") + convert(n % 1000);
-        } else if(n < 1000000){
-            return convert(Math.floor(n / 1000)) + " thousand" + ((n % 1000000 != 0) ?  " " : "") + convert(n % 1000);
-        } else if(n < 100000000){
-            return convert(Math.floor(n / 1000000)) + " million" + ((n % 100000000 != 0) ?  " " : "") + convert(n % 1000000);
-        } else if(n < 1000000000){
-            return convert(Math.floor(n / 1000000)) + " million" + ((n % 1000000000 != 0) ?  " " : "") + convert(n % 1000000);
-        } else if(n < 100000000000){
-            return convert(Math.floor(n / 1000000000)) + " billion" + ((n % 100000000000 != 0) ?  " " : "") + convert(n % 1000000000);
+
+        function convertNumber(number) {
+            var number = document.getElementById("number").value;
+            var text = convert(number);
+            document.getElementById("demo").innerHTML = text;
         }
-}
-</script>
+
+        function convert(n) {
+            if (n < 0) {
+                const text = "minus " + convert(-n);
+                return text;
+            } else if (n < 20) {
+                return units[n];
+            } else if (n < 100) {
+                return tens[Math.floor(n / 10)] + ((n % 10 != 0) ? "-" : "") + units[n % 10];
+            } else if (n < 1000) {
+                return units[Math.floor(n / 100)] + " hundred" + ((n % 100 != 0) ? " and " : "") + convert(n % 100);
+            } else if (n < 100000) {
+                return convert(Math.floor(n / 1000)) + " thousand" + ((n % 100000 != 0) ? " and " : " ") + convert(n % 1000);
+            } else if (n < 1000000) {
+                return convert(Math.floor(n / 1000)) + " thousand" + ((n % 1000000 != 0) ? " " : "") + convert(n % 1000);
+            } else if (n < 100000000) {
+                return convert(Math.floor(n / 1000000)) + " million" + ((n % 100000000 != 0) ? " " : "") + convert(n % 1000000);
+            } else if (n < 1000000000) {
+                return convert(Math.floor(n / 1000000)) + " million" + ((n % 1000000000 != 0) ? " " : "") + convert(n % 1000000);
+            } else if (n < 100000000000) {
+                return convert(Math.floor(n / 1000000000)) + " billion" + ((n % 100000000000 != 0) ? " " : "") + convert(n % 1000000000);
+            }
+        }
+    </script>
 </head>
+
 <body>
-  <div class="conversion-tool"> 
-    <div class="conversion-tool__logo-container"> 
-      <img class="conversion-tool__logo" src="logo.png" alt="Logo">
-      
+    <div class="conversion-tool">
+        <div class="conversion-tool__logo-container">
+            <img class="conversion-tool__logo" src="logo.png" alt="Logo">
+
+        </div>
+        <div class="conversion-tool__content">
+            <div class="conversion-tool__header"> Convertion tool </div>
+            <input id="number" name="number" class="conversion-tool__input" type="text" placeholder="Enter number" oninput="convertNumber()" />
+            <p class="conversion-tool__output" id="demo"></p>
+        </div>
     </div>
-    <div class="conversion-tool__content"> 
-      <div class="conversion-tool__header"> Convertion tool </div>
-      <input id="number" name="number" class= "conversion-tool__input" type="text" placeholder="Enter number" oninput ="convertNumber()"/>
-        <p class="conversion-tool__output" id="demo"></p>
-    </div>
-  </div>
-  
+
 
 </body>
+
 </html>
