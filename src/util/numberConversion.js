@@ -61,6 +61,8 @@ function getHundred(hundred, nextNumber, lastHundred){
     if(lastHundred){
         if(nextNumber !== "" && result === ""){
             result += "and";
+        }else if(result === ""){
+            return result;
         }else if(nextNumber === ""){
             return result + " " + hundreds[0];
         }else{
@@ -77,14 +79,16 @@ function getThousand(thousand){
     }else{
         result += twoDigits(thousand);
     }
-    return result + " " + hundreds[1];
+    return result === "" ? result : result + " " + hundreds[1];
 }
 
 function getHundredThousand(hundred, thousand){
     let result = ""
     const thousandPart = twoDigits(thousand);
     const hundredPart = getHundred(hundred, thousandPart, false);
-    if(hundredPart === ""){
+    if(thousandPart === "" && hundredPart === ""){
+        return result;
+    }else if(hundredPart === ""){
         return thousandPart + " " + hundreds[1];
     }else if(thousandPart !== ""){
         result += hundredPart + " " + hundreds[0] + " and " + thousandPart + " " + hundreds[1]
