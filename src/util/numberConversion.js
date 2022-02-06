@@ -1,4 +1,4 @@
-export default function convertToArabic(input){
+export default function convertToText(input){
     if(validateInput(input)){
         return createOutput(formatInput(input));
     }else{
