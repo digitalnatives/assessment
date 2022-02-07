@@ -1,13 +1,9 @@
 import {useEffect, useState} from "react";
 
 export default function NumToChar() {
-    const [number, setNumber] = useState('0');
+    const [number, setNumber] = useState('');
 
     let stringNum = convertToString(number);
-
-    useEffect(() => {
-
-    })
 
     return(
         <div>
@@ -27,19 +23,32 @@ function convertToString(number) {
     const ones = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
     const tens = ["",["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"],
         "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-    const collector = [ones, tens];
+    const hundred = " hundred "
+    const and = "and "
+    const collector = [ones, tens, ones];
     let numLength = (number.length);
+    const numberAsString = number.toString();
     if (numLength >= 1) {
-        if (number>9 && number<20) {
-            let digit = number.toString()[0]
-            numString = collector[numLength-1][digit][number.toString()[number.toString().length-1]]
-        }
-        else {
-            for (let i = 0; i < numLength; i++) {
-                let digit = parseInt(number.toString()[i]);
-                if (digit !== 0) {
-                    numString += collector[numLength-(i+1)][digit]
+        for (let i = 0; i < numLength; i++) {
+            let digit = parseInt(numberAsString[i]);
+            let place = numLength-(i+1);
+            if (digit !== 0) {
+                if (place === 1 && digit === 1) {
+                    numString += collector[place][digit][numberAsString[numLength-1]];
+                    break;
                 }
+                numString += collector[place][digit]
+                if (numLength-i === 2 && parseInt(numberAsString[numLength-1])!==0) {
+                    numString+="-"
+                }
+                if (place===2) {
+                    numString += hundred;
+                    if (parseInt(numberAsString[numLength-1]) !== 0 || parseInt(numberAsString[numLength-2]) !== 0) {
+                        numString += and;
+                    }
+                }
+            } else if (numLength === 1) {
+                numString = 0;
             }
         }
     }
