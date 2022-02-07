@@ -1,6 +1,6 @@
 # Arabic number conversion tool
 
-Create a web-based solution that converts numeric input into the English phrase of that number. 
+Create a web-based solution that converts numeric input into the English phrase of that number.
 
 For example:
 <pre>

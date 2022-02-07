@@ -1,0 +1,48 @@
+html{
+    background-color: #ffffff;
+}
+
+h2{
+    color: #020B13;
+}
+
+.converted-input-display-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.num-key-container{
+    cursor: pointer;
+    border: #020B13 2px solid;
+    background-color: #7785AC;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0 0 4px #020B13;
+    -moz-box-shadow: 0 0 4px #020B13;
+}
+
+.main-container{
+    padding: 10px;
+    -webkit-box-shadow: 0 0 10px #020B13;
+    -moz-box-shadow: 0 0 10px #020B13;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+}
+
+.input{
+    border-color: #020B13;
+    border-width: 2px;
+    border-radius: 8px;
+    text-align: center;
+}
+.input :focus{
+    border-radius: 10px;
+}
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
