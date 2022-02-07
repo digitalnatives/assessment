@@ -17,7 +17,7 @@ function Numpad(props){
             {numKeyboard.map((key)=>(
                 <Grid item xs={4} key={key}>
                     <div className="num-key-container" onClick={()=>props.handleClick(key)}>
-                        <h2>{key === "i" ? infoIcon : key === "backspace"? backspaceIcon : key}</h2>
+                        <h2 className="num-key">{key === "i" ? infoIcon : key === "backspace"? backspaceIcon : key}</h2>
                     </div>
                 </Grid>
             ))}
