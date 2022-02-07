@@ -17,31 +17,35 @@ function formatInput(input){
 function createOutput(input){
     const number = input.toString()
     const numberLen = number.length;
-    const finalTwoDigit = numberLen > 2 ? twoDigits(number.slice(-2)) : "";
+    const finalTwoDigit = numberLen > 2 ? getTwoDigits(number.slice(-2)) : "";
     switch (numberLen){
         case 1:
-            if(parseInt(number) === 0){
-                return "zero"
-            }
-            return zeroToNine[number];
+            return oneDigit();
         case 2:
-            return twoDigits(number);
+            return twoDigit();
         case 3:
-            return `${getHundred(number[0], finalTwoDigit, true)} ${finalTwoDigit}`;
+            return createString(threeDigit());
         case 4:
-            return createString(`${getThousand(number[0])} ${getHundred(number.slice(-3), finalTwoDigit, true)} ${finalTwoDigit}`);
+            return createString(fourDigit());
         case 5:
-            return createString(`${getThousand(number.slice(0, 2))} ${getHundred(number.slice(-3), finalTwoDigit, true)} ${finalTwoDigit}`);
+            return createString(fiveDigit());
         case 6:
-            return createString(`${getHundredThousand(number[0], number.slice(1, 3))} ${getHundred(number[3], finalTwoDigit, true)} ${finalTwoDigit}`);
+            return createString(sixDigit());
         case 7:
-            return createString(`${zeroToNine[number[0]]} ${hundreds[2]} ${getHundredThousand(number[1], number.slice(2, 4))} ${getHundred(number[4], finalTwoDigit, true)} ${finalTwoDigit}`);
+            return createString(sevenDigit());
         default:
             return "Higher numbers are coming soon!";
     }
+    function oneDigit(){ return parseInt(number) === 0 ? "zero" : zeroToNine[number] }
+    function twoDigit(){ return getTwoDigits(number) }
+    function threeDigit(){ return `${getHundred(number[0], finalTwoDigit, true)} ${finalTwoDigit}` }
+    function fourDigit(){ return `${getThousand(number[0])} ${getHundred(number.slice(-3), finalTwoDigit, true)} ${finalTwoDigit}` }
+    function fiveDigit(){ return `${getThousand(number.slice(0, 2))} ${getHundred(number.slice(-3), finalTwoDigit, true)} ${finalTwoDigit}` }
+    function sixDigit(){ return `${getHundredThousand(number[0], number.slice(1, 3))} ${getHundred(number[3], finalTwoDigit, true)} ${finalTwoDigit}` }
+    function sevenDigit(){ return `${zeroToNine[number[0]]} ${hundreds[2]} ${getHundredThousand(number[1], number.slice(2, 4))} ${getHundred(number[4], finalTwoDigit, true)} ${finalTwoDigit}` }
 }
 
-function twoDigits(twoDigits) {
+function getTwoDigits(twoDigits) {
     let result;
     if(parseInt(twoDigits) === 0){
         return ""
@@ -77,14 +81,14 @@ function getThousand(thousand){
     if(parseInt(thousand) < 10){
         result += zeroToNine[thousand];
     }else{
-        result += twoDigits(thousand);
+        result += getTwoDigits(thousand);
     }
     return result === "" ? result : result + " " + hundreds[1];
 }
 
 function getHundredThousand(hundred, thousand){
     let result = ""
-    const thousandPart = twoDigits(thousand);
+    const thousandPart = getTwoDigits(thousand);
     const hundredPart = getHundred(hundred, thousandPart, false);
     if(thousandPart === "" && hundredPart === ""){
         return result;
