@@ -8,7 +8,9 @@ function App() {
     <div className="App">
         <Header />
         <div className={"content"}>
-            <h1>Type a number here to check how to write it!</h1>
+            <h1>
+                Type a number here and check how to write it!
+            </h1>
             <NumToChar />
         </div>
     </div>

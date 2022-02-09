@@ -1,11 +1,131 @@
 body {
-  background-color: dimgray;
+  background-color: white;
+}
+
+.header-container {
+  position: static;
+  top: 0;
+  width: 100%;
+  height: 90vh;
+  color: white;
+}
+
+@media (max-width: 1050px) {
+  .header-container {
+    height: 65vh;
+  }
+}
+
+.header-background {
+  width: 100%;
+  height: inherit;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.header-overlay {
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.logo {
+  height: 5vmin;
+  margin: 1em;
+}
+
+.brand-name {
+  font-weight: bold;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: 100%;
+}
+
+.slogan {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 1050px) {
+  .slogan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+  }
+}
+
+.big-slogan {
+  width: 30%;
+  margin-right: 5%;
+  text-align: right;
+  font-size: 2em;
+}
+
+@media (max-width: 1050px) {
+  .big-slogan {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+    font-size: medium;
+  }
+}
+
+.description {
+  width: 30%;
+  text-align: left;
+  margin-left: 5%;
+}
+
+@media (max-width: 1050px) {
+  .description {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.content > h1{
+  margin: 3em;
+}
+
+@media (max-width: 1050px) {
+  .content > h1 {
+    text-align: center;
+    font-size: medium;
+  }
+}
+
+.input-field {
+  width: 50%;
+  font-size: larger;
+  border-radius: 10px;
+}
+
+.sentence {
+  margin: 3em 1em;
 }
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 10vmin;
 }
