@@ -9,12 +9,15 @@ export default function NumToChar() {
     return(
         <div>
             <input
+                className={"input-field"}
                 type="number"
                 onInput={(e) => setNumber(e.target.value)}
                 min={1}
                 step={1}
             />
-            <h2>{numberAsText}</h2>
+            <h2 className={"sentence"}>
+                {numberAsText}
+            </h2>
         </div>
     )
 }
