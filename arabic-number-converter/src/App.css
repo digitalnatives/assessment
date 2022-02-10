@@ -1,7 +1,10 @@
+.App {
+  text-align: center;
+}
+
 body {
   background-color: white;
 }
-
 .header-container {
   position: static;
   top: 0;
@@ -15,6 +18,7 @@ body {
     height: 65vh;
   }
 }
+
 
 .header-background {
   width: 100%;
@@ -57,7 +61,6 @@ body {
   height: inherit;
   width: 100%;
 }
-
 .slogan {
   display: flex;
   flex-direction: row;
@@ -92,13 +95,13 @@ body {
   }
 }
 
+
 .description {
   min-width: 30%;
   text-align: left;
   margin-left: 5%;
   line-height: 150%;
 }
-
 .description > p {
 
 }
@@ -120,6 +123,7 @@ body {
     font-size: medium;
   }
 }
+
 
 .nums-and-text-box {
   display: flex;
@@ -152,7 +156,6 @@ body {
   border-radius: 10px;
   margin-bottom: 3em;
 }
-
 .sentence {
   width: 100%;
   margin: 0;
@@ -167,6 +170,22 @@ body {
   }
 }
 
-.App {
-  text-align: center;
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 150px;
+  background-color: black;
+  color: white;
+}
+
+.footer-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.linkedin, .github {
+  max-height: 30px;
 }
