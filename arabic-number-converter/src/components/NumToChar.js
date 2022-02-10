@@ -7,17 +7,19 @@ export default function NumToChar() {
     let numberAsText = convertToSentence(number);
 
     return(
-        <div>
+        <div className={"nums-and-text-box"}>
             <input
                 className={"input-field"}
                 type="number"
                 onInput={(e) => setNumber(e.target.value)}
-                min={1}
+                min={0}
                 step={1}
             />
-            <h2 className={"sentence"}>
-                {numberAsText}
-            </h2>
+            <div className={"sentence-box"}>
+                <h2 className={"sentence"}>
+                    {numberAsText}
+                </h2>
+            </div>
         </div>
     )
 }
