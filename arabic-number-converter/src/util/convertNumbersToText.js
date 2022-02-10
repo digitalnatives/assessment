@@ -24,6 +24,13 @@ export default function convertToSentence(number) {
     const numberAsString = number.toString();
 
     if (numLength >= 1) {
+        if (number === "0") {
+            return "zero"
+        } else if (numLength > 12) {
+            return "Sorry this number is too long even for me! :("
+        } else if (numLength > 1 && number[0] === "0") {
+            return "Sorry this is not a valid number! :("
+        }
         for (let i = 0; i < numLength; i++) {
             const digit = parseInt(numberAsString[i]);
             const reversedPlace = numLength - (i + 1);
