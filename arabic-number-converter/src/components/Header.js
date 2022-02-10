@@ -1,4 +1,4 @@
-import logo from "../1NumberLogo.png";
+import logo from "../pictures/1NumberLogo.png";
 import background from "../backgroud.jpeg";
 
 export default function Header() {
