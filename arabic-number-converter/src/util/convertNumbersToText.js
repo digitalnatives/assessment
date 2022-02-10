@@ -45,7 +45,7 @@ export default function convertToSentence(number) {
             }
         }
     }
-    return sentence;
+    return removeExtraSpaces();
 }
 
 function dealWithOnes(digit, nextDigit, numberAsString, reversedPlace, i) {
@@ -111,4 +111,9 @@ function addTeensToSentence(digit, nextDigit) {
     if (nextDigit !== 0 && digit !== 0) {
         sentence += "-";
     }
+}
+
+function removeExtraSpaces() {
+    sentence = sentence.replace('  ', ' ')
+    return sentence.trim();
 }
