@@ -23,7 +23,7 @@ function n2w(n){
 
 //* And using this scheme, it is quite easy to add further code and convert larger numbers 
 
-// Text Display
+//? Text Display
 
 function displayText() {
     let inputVal = input.value;
@@ -35,7 +35,7 @@ let output = document.getElementById('output');
 let input = document.getElementById('input');
 input.addEventListener('input', displayText);
 
-// Characters Validation 
+//? Characters Validation 
 
 let inputField = document.getElementById("input");
 
@@ -51,7 +51,7 @@ inputField.addEventListener("keydown", function(e) {
   }
 });
 
-//* Note of Tasks and some console.logs
+//? Note of Tasks and some console.logs
 
 // console.log(n2w(7))
 // console.log(n2w(42))
