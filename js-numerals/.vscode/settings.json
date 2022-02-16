@@ -26,15 +26,6 @@
       "backgroundColor": "#799c60",
       "bold": false,
       "italic": false
-    },
-    {
-      "tag": "%",
-      "color": "#240a00",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": " #ebe246",
-      "bold": false,
-      "italic": false
     }    
   ],
   "bracket-pair-colorizer-2.activeScopeCSS": [
