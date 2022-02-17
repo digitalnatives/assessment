@@ -8,8 +8,6 @@ let numbers =
   );
 let tens = 'twenty thirty forty fifty sixty seventy eighty ninety'.split(' ');
 
-console.log(~~1.5);
-
 function numberToWords(n) {
   let cutThousand =
     ~~((n - ~~~~(n / 1000000) * 1000000) / 1000) == 0
@@ -17,6 +15,12 @@ function numberToWords(n) {
       : numberToWords(~~((n - ~~~~(n / 1000000) * 1000000) / 1000)) + ' thousand';
 
   if (!n) return 'Enter a number in the input field';
+//   try {
+//     throw new Error('Enter a number in the input field');
+// } 
+// catch (e) {
+//   console.log(e.message);
+// }
   if (n < 20) return numbers[n];
   let digits = n % 10;
   if (n < 100) return tens[~~(n / 10) - 2] + (digits ? '-' + numbers[digits] : '');
@@ -45,7 +49,7 @@ function numberToWords(n) {
       cutThousand +
       (n % 1000 != 0 ? ' ' + numberToWords(n % 1000) : '')
     );
-  if (n >= 1000000000 && n <= 999999999999)
+  if (n >= 1000000000 && n < 1000000000000)
     return (
       numberToWords(~~(~~(~~(n / 1000) / 1000) / 1000)) +
       ' billion ' +
@@ -55,7 +59,7 @@ function numberToWords(n) {
       cutThousand +
       (n % 1000 != 0 ? ' ' + numberToWords(n % 1000) : '')
     );
-  if (n > 999999999999)
+  if (n >= 1000000000000)
     return 'This number is outside the range of the converter';
   return;
 }
@@ -64,12 +68,11 @@ function numberToWords(n) {
 
 // Text Display
 
-function displayText() {
-  let inputVal = input.value;
-  let handle = numberToWords(inputVal);
+  function displayText() {
+    let inputVal = input.value;
+    let handle = numberToWords(inputVal);
   output.innerHTML = handle;
 }
-let button = document.getElementById('changeText');
 let output = document.getElementById('output');
 let input = document.getElementById('input');
 input.addEventListener('input', displayText);
