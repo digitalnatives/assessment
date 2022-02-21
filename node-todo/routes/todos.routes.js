@@ -1,6 +1,8 @@
+const {Router} = require('express');
 
-const { Router } = require('express');
-const {findTodo} = require("../models/todos.model");
+const {
+    loadTodos
+} = require("../models/todos.model");
 
 const todosApi = Router();
 
@@ -8,8 +10,9 @@ todosApi.use('/:id', async (req, res, next) => {
 
 })
 
-todosApi.get('/', (req, res) => {
-
+todosApi.get('/', async (req, res) => {
+    const todos = await loadTodos();
+    res.json(todos);
 })
 
 todosApi.get('/:id', (req, res) => {

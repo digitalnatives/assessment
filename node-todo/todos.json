@@ -4,5 +4,11 @@
     "text": "test the todo",
     "priority": 3,
     "done": false
+  },
+  {
+    "id": "2",
+    "text": "test the todo 2",
+    "priority": 5,
+    "done": false
   }
 ]

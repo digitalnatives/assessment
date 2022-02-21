@@ -21,7 +21,9 @@ const saveTodos = (todos) => {
 }
 
 const loadTodos = async () => {
-
+    checkFilePath();
+    const todos = await fs.readFile(filePath, {encoding: "utf-8"});
+    return JSON.parse(todos);
 }
 
 const findTodo = async (id) => {
