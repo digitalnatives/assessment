@@ -4,12 +4,13 @@
   "description": "## Instructions",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "uuid": "^8.3.2"
   }
 }
