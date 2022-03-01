@@ -39,16 +39,18 @@ const inputElement = document.querySelector(".input_element");
 inputElement.addEventListener("input", converter);
 
 export default function converter(e) {
-  let inputNum = e.target.value.replace(/[^\d]/g, "");
-  let result;
-
+  let pattern = /\D/g;
+  let result = "";
   const outputElement = document.querySelector(".output_element");
 
-  if (inputNum === null) {
-    result = "Kérlek adj meg egy számot";
-    return;
+  if (e.target.value === "") {
+    outputElement.innerHTML = "";
+  } else if (e.target.value.match(pattern)) {
+    result = "Please give only numbers";
+  } else if (e.target.value.length > 9) {
+    result = "Too big number";
   } else {
-    result = conversionTool(inputNum);
+    result = conversionTool(e.target.value.replace(/^\D+$/g, ""));
   }
 
   outputElement.innerHTML = result;
@@ -56,12 +58,10 @@ export default function converter(e) {
   return result;
 }
 
-function conversionTool(inputNum) {
+function conversionTool(inputNumber) {
   let result;
-  let num = parseInt(inputNum);
+  let num = parseInt(inputNumber);
   let numberString = num.toString();
-
-  //let numberLength = inputNum ? inputNum.replace(/^[0]+/, "").length : 0;
   let numberLength = numberString.length;
 
   if (numberLength === 1) {
@@ -69,7 +69,6 @@ function conversionTool(inputNum) {
   } else if (numberLength === 0) {
     result = "";
   } else if (numberLength === 2 && num < 20) {
-    console.log(3);
     result = data.teens[num];
   } else if (numberLength === 2) {
     result =
