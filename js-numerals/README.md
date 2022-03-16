@@ -9,11 +9,12 @@ For example:
 1999    === one thousand nine hundred and ninety-nine
 2001    === two thousand and one
 17999   === seventeen thousand nine hundred and ninety-nine
+100001  === one hundred thousand and one
 342251  === three hundred and forty-two thousand two hundred and fifty-one
 1300420 === one million three hundred thousand four hundred and twenty
 </pre>
 
-Note: Numbers greater than 100 and less than 1000 always include the word "and" between the hundreds figure and the other part, numbers greater than 1000 include "and" between any hundreds figure and the figure less than 100.
+Note: Numbers greater than 100 may include the word "and" between the hundreds figure and the rest of the number. Figure out the pattern and implement the solution accordingly.
 
 Treat this task like a project to create a real-life application, focus on other aspects too, not just the code:
 - Fork this project.
