@@ -1,5 +1,5 @@
 import "./App.css";
-import { convert } from "./convert";
+import { convert } from "./converter/convert";
 import React, { useState } from "react";
 
 function App() {

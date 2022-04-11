@@ -1,4 +1,4 @@
-import { convert } from "./convert";
+import { convert } from "../converter/convert";
 
 test("test singe digit conversion", () => {
   const singleDigit = convert("7");

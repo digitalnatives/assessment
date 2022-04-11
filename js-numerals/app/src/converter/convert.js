@@ -51,26 +51,28 @@ export function convert(inputNumber) {
     const a = numberString.slice(1, 2);
     result =
       data.tens[numberString.slice(0, 1)] +
-      (a === "0" ? "" : "-" + data.ones[numberString.slice(1, 2)]);
+      supporter(a === "0", "", "-" + data.ones[numberString.slice(1, 2)]);
   } else if (numberLength === 3) {
     let andHundred = numberString.slice(1, 3);
     result =
       convert(numberString.slice(0, 1)) +
-      (andHundred === "00"
-        ? " hundred "
-        : " hundred and " + convert(numberString.slice(1, 3)));
+      supporter(
+        andHundred === "00",
+        " hundred ",
+        " hundred and " + convert(numberString.slice(1, 3))
+      );
   } else if (numberLength > 3 && numberLength < 6) {
     let andThousand = numberString.slice(-3, -1);
     result =
       convert(numberString.slice(0, -3)) +
-      (andThousand === "00" ? " thousand and " : " thousand ") +
+      supporter(andThousand === "00", " thousand and ", " thousand ") +
       convert(numberString.slice(-3));
   } else if (numberLength === 6) {
     let andHundred2 = numberString.slice(1, 3);
     result =
       convert(numberString.slice(0, 1)) +
       " hundred " +
-      (andHundred2 === "00" ? "" : " and ") +
+      supporter(andHundred2 === "00", "", " and ") +
       convert(numberString.slice(1, 3)) +
       " thousand " +
       convert(numberString.slice(3, 6));
@@ -83,4 +85,9 @@ export function convert(inputNumber) {
   num = "";
 
   return result.replace("  ", " ");
+}
+
+function supporter(condition, firstOption, secondOption) {
+  if (condition) return firstOption;
+  else return secondOption;
 }
