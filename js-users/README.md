@@ -44,17 +44,17 @@ The list should be able to **paginate on the front-end side**
 
 ### 2. exercise
 
-Add a new action to the user list, with which you can activate/lock a user
-object. A locked user should be displayed with strikethroughed attributes.
-Use the update action when modifying the status field.
-
-### 3. exercise
-
 Append 2 new routes in your application. On the `/new` route you should be able
 to create new users, on the `/edit` route the selected user’s attributes can be
 modified. You should only be able to set the user’s first and last name.
 Handle validation errors given back from the server, display the error message
 next to the attribute’s label.
+
+### 3. exercise
+
+Add a new action to the user list, with which you can activate/lock a user
+object. A locked user should be displayed with strikethroughed attributes.
+Use the update action when modifying the status field.
 
 ### 4. exercise
 
