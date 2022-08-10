@@ -19,7 +19,9 @@
 
 Create a front-end application, where you can handle user objects stored on a
 server-based application. The server is located at https://assessment-users-backend.herokuapp.com.
-It provides a REST API for the User objects on the `/users`path. (`.json` extension is required unless the `Content-Type` header is `application/json`)
+It provides a REST API for the User objects on the `/users` path.
+You have to either send the header `Content-Type: application/json` along with the request,
+or append `.json` to the path. If you do neither, you will get HTTP Error 500.
 
 A user object has 6 attributes:
 
