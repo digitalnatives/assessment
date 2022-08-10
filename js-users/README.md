@@ -62,4 +62,4 @@ Unfortunately the site’s lazy designer disappeared without finalizing his work
 so we don’t have an exact design for the user list.
 
 Make it nice, visually pleasing. You can use external CSS libraries or
-frameworks. if you have time work on the mobile version so it would be usable.
+frameworks. If you have time work on the mobile version so it would be usable.
