@@ -19,7 +19,9 @@
 
 Create a front-end application, where you can handle user objects stored on a
 server-based application. The server is located at https://assessment-users-backend.herokuapp.com.
-It provides a REST API for the User objects on the `/users`path. (`.json` extension is required unless the `Content-Type` header is `application/json`)
+It provides a REST API for the User objects on the `/users` path.
+You have to either send the header `Content-Type: application/json` along with the request,
+or append `.json` to the path. If you do neither, you will get HTTP Error 500.
 
 A user object has 6 attributes:
 
@@ -42,17 +44,17 @@ The list should be able to **paginate on the front-end side**
 
 ### 2. exercise
 
-Add a new action to the user list, with which you can activate/lock a user
-object. A locked user should be displayed with strikethroughed attributes.
-Use the update action when modifying the status field.
-
-### 3. exercise
-
 Append 2 new routes in your application. On the `/new` route you should be able
 to create new users, on the `/edit` route the selected user’s attributes can be
 modified. You should only be able to set the user’s first and last name.
 Handle validation errors given back from the server, display the error message
 next to the attribute’s label.
+
+### 3. exercise
+
+Add a new action to the user list, with which you can activate/lock a user
+object. A locked user should be displayed with strikethroughed attributes.
+Use the update action when modifying the status field.
 
 ### 4. exercise
 
@@ -60,4 +62,4 @@ Unfortunately the site’s lazy designer disappeared without finalizing his work
 so we don’t have an exact design for the user list.
 
 Make it nice, visually pleasing. You can use external CSS libraries or
-frameworks. if you have time work on the mobile version so it would be usable.
+frameworks. If you have time work on the mobile version so it would be usable.
